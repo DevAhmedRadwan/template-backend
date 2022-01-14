@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const premissionSchema = require("./premission");
 const credentialSchema = require("./credential");
 
 const userSchema = new mongoose.Schema({
@@ -8,12 +7,6 @@ const userSchema = new mongoose.Schema({
   },
   lastName: {
     type: String,
-  },
-  imageURI: {
-    type: String,
-  },
-  premissions: {
-    type: [premissionSchema],
   },
   credentials: {
     type: [credentialSchema],

@@ -1,0 +1,36 @@
+{
+  "name": "sync",
+  "version": "0.1.0",
+  "description": "sync api",
+  "main": "server.js",
+  "author": "Radwan",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "passport-jwt": "^4.0.0",
+    "passport-oauth2": "^1.6.1",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "cookie-parser": "^1.4.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5",
+    "connect-mongo": "^4.6.0",
+    "mongoose-unique-validator": "^2.0.3",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "jest": "^27.4.3",
+    "supertest": "^6.1.6",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

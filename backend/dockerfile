@@ -1,0 +1,47 @@
+# Using official node runtime base image
+FROM node:14-alpine
+
+# Set the application directory
+WORKDIR /backend
+
+# Install package.json
+COPY package.json /backend/package.json
+
+# Install dependancies
+RUN npm i
+
+# Install package.json
+COPY nodemon.json /backend/nodemon.json
+
+# Copy our code from the current folder to /app inside the container
+COPY src /backend/src
+
+# Make port 80 available for publish
+EXPOSE 80
+
+# Environment variables
+# Environment type
+ENV NODE_ENV="production"
+# Server port
+ENV PORT=80
+# Db connection
+ENV MONGODB_URI="mongodb://localhost:27018/templatedb"
+# Server cors origins
+ENV ORIGINS_WHITELIST="http://localhost:5000,http://[::]:5000"
+# Number of the iteration that the encryption algo will use
+ENV PASSWORD_ENCRYPTION_ITERATIONS=10000
+# The length of the salt in bytes that is used to encrypt the password
+ENV PASSWORD_ENCRYPTION_OUTPUT_LENGTH=64
+# The length of the salt in bytes that is used to encrypt the password
+ENV PASSWORD_ENCRYPTION_SALT_BYTE_LENGTH=32
+# The secret used to encrypt the cookie
+ENV SESSION_COOKIE_SECRET="CD8D98F36F5EB39466382671A2DF6"
+# The max age of the session cookie that is Equals 1 day (1 day * 24 hr/1 day * 60 min/1 hr * 60 sec/1 min * 1000 ms / 1 sec)
+ENV SESSION_COOKIE_MAXAGE=86400000
+# Database link used for session
+ENV SESSION_MONGODB_URL="mongodb://localhost:27018/templatedb"
+# Collection name that is used for sessions
+ENV SESSION_MONGODB_COLLECTION_NAME="sessions"
+
+# Define our command to be run when launching the container
+CMD ["npm", "run", "start"]

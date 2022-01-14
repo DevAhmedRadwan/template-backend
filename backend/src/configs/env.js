@@ -1,0 +1,30 @@
+// parse environment variables
+module.exports = {
+  NODE_ENV: String(process.env.NODE_ENV),
+
+  PORT: parseInt(process.env.PORT),
+
+  ORIGINS_WHITELIST: process.env.ORIGINS_WHITELIST.split(","),
+
+  MONGODB_URI: String(process.env.MONGODB_URI),
+
+  PASSWORD_ENCRYPTION_ITERATIONS: parseInt(
+    process.env.PASSWORD_ENCRYPTION_ITERATIONS
+  ),
+
+  PASSWORD_ENCRYPTION_OUTPUT_LENGTH: parseInt(
+    process.env.PASSWORD_ENCRYPTION_OUTPUT_LENGTH
+  ),
+
+  PASSWORD_ENCRYPTION_SALT_BYTE_LENGTH: parseInt(
+    process.env.PASSWORD_ENCRYPTION_SALT_BYTE_LENGTH
+  ),
+
+  SESSION_COOKIE_SECRET: String(process.env.SESSION_COOKIE_SECRET),
+
+  SESSION_COOKIE_MAXAGE: parseInt(process.env.SESSION_COOKIE_SECRET),
+
+  SESSION_MONGODB_URL: String(process.env.SESSION_MONGODB_URL),
+
+  SESSION_MONGODB_COLLECTION_NAME: String(process.env.SESSION_MONGODB_COLLECTION_NAME),
+};

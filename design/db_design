@@ -1,0 +1,10 @@
+=user
+_id													<ObjectId>
+firstName										<String>
+lastName										<String>
+credentials 								<document[]>
+credentials.method 					<String>
+credentials.loginData				<document[]>
+credentials.loginData.key		<String>
+credentials.loginData.value	<String>
+

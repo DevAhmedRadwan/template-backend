@@ -1,0 +1,7 @@
+{
+  "events": {
+    "restart": "clear"
+  },
+  "watch": ["src/"],
+  "ext": "js, json, yml"
+}

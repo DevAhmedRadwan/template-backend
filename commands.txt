@@ -1,7 +1,8 @@
 build image:
-  sudo docker build ./backend -t template-backend
+  sudo docker build ./backend -t backend-template
 start:
   sudo docker-compose up
-  sudo docker-compose -p template-backend-test -f backend-test.yml up
+  sudo docker-compose -p backend-template-test -f backend-test.yml up
 shutdown:
   sudo docker-compose down
+  sudo docker-compose -p backend-template-test down

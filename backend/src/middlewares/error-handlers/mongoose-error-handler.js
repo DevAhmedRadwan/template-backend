@@ -25,7 +25,9 @@ module.exports = (err, req, res, next) => {
       error[key] = message;
     });
 
-    next(errorUtil.build(500, "Database validation and verfication error!", error));
+    next(
+      errorUtil.build(500, "Database validation and verfication error!", error)
+    );
   }
 
   next(err);

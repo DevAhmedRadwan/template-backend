@@ -1,4 +1,4 @@
-module.exports = function getLocalCredentialSalt(){
+module.exports = function getLocalCredentialSalt() {
   let localCredential = this.getCredentialByMethod("local");
   let salt = null;
   localCredential.loginData.forEach((element) => {
@@ -8,4 +8,4 @@ module.exports = function getLocalCredentialSalt(){
     }
   });
   return salt;
-}
+};

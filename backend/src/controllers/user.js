@@ -19,7 +19,7 @@ async function login(req, res, next) {
 
 async function logout(req, res, next) {
   req.logout();
-  return res.status(OK).json({message: "User loggedout"});
+  return res.status(OK).json({ message: "User loggedout" });
 }
 
 module.exports.create = create;

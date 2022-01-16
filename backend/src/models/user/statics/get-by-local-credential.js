@@ -6,14 +6,14 @@ module.exports = async function getByLocalCredential(email) {
   // get user by email
   return await userModel.findOne({
     credentials: {
-      $elemMatch: { 
+      $elemMatch: {
         loginData: {
           $elemMatch: {
             key: "email",
-            value: email
-          }
-        }
-      }
+            value: email,
+          },
+        },
+      },
     },
   });
 };

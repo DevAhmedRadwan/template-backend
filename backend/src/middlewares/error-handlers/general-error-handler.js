@@ -5,7 +5,7 @@ module.exports = (error, req, res, next) => {
   let message = error.message;
   let data = error.data;
   // in testing and production only cahnge the message and date of 500 errors
-  if (status == 500 && (node_env == "production" || node_env == "test")) {
+  if (status == 500 && node_env == "production") {
     message = "Internal server error!";
     data = "No data available";
   }

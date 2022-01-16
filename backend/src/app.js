@@ -18,7 +18,7 @@ module.exports = function appBuilder(dependances) {
   // initialize session
   const MongoStore = require("connect-mongo");
   const sessionBuilder = require("./configs/session");
-  sessionBuilder(app,MongoStore);
+  sessionBuilder(app, MongoStore);
 
   // initalize passport
   const passportBuilder = require("./configs/passport/passport");

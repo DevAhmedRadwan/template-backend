@@ -9,14 +9,14 @@ module.exports = (app, doc_route) => {
       definition: {
         openapi: "3.0.0",
         info: {
-          title: "template backend",
+          title: "backend template",
           version: "1.0.0",
-          description: "template backend routes documentation",
+          description: "backend template routes documentation",
         },
         servers: [
           {
             url: `http://[::]:${PORT}`,
-            description: "template backend",
+            description: "backend template",
           },
         ],
       },

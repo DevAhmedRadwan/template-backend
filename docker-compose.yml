@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  template-db:
+  db-template:
     image: mongo:latest
     volumes:
       - ./db:/data/db
@@ -9,8 +9,8 @@ services:
     command: 'mongod --port 27018'
     logging:
       driver: none
-  template-backend:
-    image: template-backend:latest
+  backend-template:
+    image: backend-template:latest
     environment:
       - NODE_ENV=development # environment type
       - PORT=5000 # server port
@@ -28,4 +28,4 @@ services:
     command: npm run dev
     network_mode: host
     depends_on:
-      - template-db
+      - db-template

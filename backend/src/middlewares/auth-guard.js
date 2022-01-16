@@ -1,22 +1,15 @@
 const { UNAUTHORIZED } = require("../constant/response-status");
 const errorUtil = require("../util/error");
 
-module.exports.guard = (roles) => {
+module.exports.guard = () => {
   return (req, res, next) => {
     const isAuthenticated = req.isAuthenticated();
-    let rolesIntersection = [];
 
-    if (isAuthenticated)
-      rolesIntersection = req.user.role.filter((role) => roles.includes(role));
-
-    if (isAuthenticated && rolesIntersection.length > 0) {
+    if (isAuthenticated) {
       next();
     } else {
       next(
-        errorUtil.build(
-          UNAUTHORIZED,
-          "You are not authorized to view this resource"
-        )
+        errorUtil.build(UNAUTHORIZED, "Not authorized to view this resource")
       );
     }
   };

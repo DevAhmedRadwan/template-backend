@@ -1,3 +1,3 @@
 module.exports = Object.freeze({
-  user: require("./user")
+  user: require("./user"),
 });

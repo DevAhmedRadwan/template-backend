@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   },
   credentials: {
     type: [credentialSchema],
-  }
+  },
 });
 
 module.exports = userSchema;

@@ -21,7 +21,8 @@ module.exports = (app) => {
   });
 
   passport.deserializeUser((userId, done) => {
-    User.findById(userId)
+    userModel
+      .findById(userId)
       .then((user) => {
         done(null, user);
       })

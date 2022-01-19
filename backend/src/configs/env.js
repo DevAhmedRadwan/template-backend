@@ -22,7 +22,7 @@ module.exports = {
 
   SESSION_COOKIE_SECRET: String(process.env.SESSION_COOKIE_SECRET),
 
-  SESSION_COOKIE_MAXAGE: parseInt(process.env.SESSION_COOKIE_SECRET),
+  SESSION_COOKIE_MAXAGE: parseInt(process.env.SESSION_COOKIE_MAXAGE),
 
   SESSION_MONGODB_URL: String(process.env.SESSION_MONGODB_URL),
 

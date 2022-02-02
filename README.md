@@ -26,3 +26,8 @@ this is a template-backend
 # live jsdoc github page
 
 https://devahmedradwan.github.io/template-backend/
+
+# Note
+
+jsdoc not implemented
+jest tests not completed

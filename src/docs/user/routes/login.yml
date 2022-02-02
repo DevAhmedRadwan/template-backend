@@ -1,0 +1,41 @@
+paths:
+  /user/login:
+    post:
+      tags:
+        - User
+      summary: login user to our system.
+      description: >
+        this is the login portal that login the user to our system
+        depending on the login method he used to login it accept any
+        method of login that he already signed up with.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  required:
+                    - email
+                    - password
+                  properties:
+                    email:
+                      type: string
+                      description: login email.
+                      example: jonsnow@gmail.com
+                    password:
+                      type: string
+                      description: login password.
+                      example: 12345
+      responses:
+        200:
+          description: Response of the successful login operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User logged in

@@ -1,0 +1,51 @@
+paths:
+  /user:
+    get:
+      tags:
+        - User
+      summary: get the logged in user data.
+      description: >
+        it returns the logged in user data that is used in the user profile.
+      responses:
+        200:
+          description: Response of the successful login operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User Retrieved
+                  data:
+                    type: object
+                    description: User profile data.
+                    properties:
+                      firstName:
+                        type: string
+                        description: The user's first name.
+                        example: jon
+                      lastName:
+                        type: string
+                        description: The user's last name.
+                        example: snow
+                      imageURI:
+                        type: string
+                        description: The user's profile pic link.
+                        example: /jonsnow.png
+                      credentials:
+                        type: array
+                        items:
+                          anyOf:
+                            - type: object
+                              properties:
+                                method:
+                                  type: string
+                                  description: this is the credential login method.
+                                  example: local
+                                email:
+                                  type: string
+                                  description: >
+                                    The user's email for this credential login method.
+                                  example: jonsnow@gmail.com

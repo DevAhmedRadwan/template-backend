@@ -1,0 +1,57 @@
+paths:
+  /user:
+    put:
+      tags:
+        - User
+      summary: Update user data.
+      description: >
+        Update user first name, last name and/or credentials.
+        when you update credential you can insert new credential
+        or update and new one. the inserted credential will not
+        delete other credentials.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  description: The user's first name.
+                  example: Tyrion
+                lastName:
+                  type: string
+                  description: The user's last name.
+                  example: Lannister
+                credentials:
+                  type: array
+                  items:
+                    - type: object
+                      required:
+                        - method
+                      description: >
+                        The user's credential corresponding to the way he registered.
+                      example:
+                        {
+                          method: "local",
+                          email: "TyrionLannister@gmail.com",
+                          password: "12345",
+                        }
+                      properties:
+                        method:
+                          type: string
+                          description: The name of the auth service.
+                          example: local
+      responses:
+        200:
+          description: Response of the succesful update operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User updated

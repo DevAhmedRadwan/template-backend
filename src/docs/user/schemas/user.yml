@@ -1,0 +1,36 @@
+components:
+  schemas:
+    user:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - credentials
+      properties:
+        firstName:
+          type: string
+          description: The user's first name.
+          example: jon
+        lastName:
+          type: string
+          description: The user's last name.
+          example: snow
+        imageURI:
+          type: string
+          description: The user's profile pic link.
+          example: /jonsnow.png
+        credentials:
+          type: array
+          items:
+            anyOf:
+              - type: object
+                properties:
+                  method:
+                    type: string
+                    description: this is the credential login method.
+                    example: local
+                  email:
+                    type: string
+                    description: >
+                      The user's email for this credential login method.
+                    example: jonsnow@gmail.com

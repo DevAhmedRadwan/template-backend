@@ -1,0 +1,20 @@
+paths:
+  /user/logout:
+    post:
+      tags:
+        - User
+      summary: logout user from our system.
+      description: >
+        it will logout the user from our system despite his login method.
+      responses:
+        200:
+          description: Response of the successful logout operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User logged out

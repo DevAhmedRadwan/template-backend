@@ -1,0 +1,56 @@
+paths:
+  /user:
+    post:
+      tags:
+        - User
+      summary: Create new user aka register a new user.
+      description: >
+        Create a user by sending his first name,
+        last name and the data corresponding to the way he registered.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - firstName
+                - lastName
+                - credential
+              properties:
+                firstName:
+                  type: string
+                  description: The user's first name.
+                  example: jon
+                lastName:
+                  type: string
+                  description: The user's last name.
+                  example: snow
+                credential:
+                  type: object
+                  required:
+                    - method
+                  description: The user's credential corresponding to the way he registered.
+                  example:
+                    {
+                      method: "local",
+                      email: "jonsnow@gmail.com",
+                      password: "12345",
+                    }
+                  properties:
+                    method:
+                      type: string
+                      description: The name of the auth service.
+                      example: local
+      responses:
+        200:
+          description: Response of the succesful regester operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User created

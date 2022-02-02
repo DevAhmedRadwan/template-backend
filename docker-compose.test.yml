@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  sync-api:
+    image: sync-api:latest
+    env_file:
+      - ./.test.env
+    volumes:
+      - ./src:/api/src
+    command: npm run test

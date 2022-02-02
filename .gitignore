@@ -1,2 +1,7 @@
-# dependencies
+/node_modules
+/jsdoc/out
 /db
+/*.env
+
+# except
+!.example.env

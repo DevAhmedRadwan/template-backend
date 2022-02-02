@@ -1,0 +1,21 @@
+paths:
+  /user:
+    delete:
+      tags:
+        - User
+      summary: Delete the logged in user.
+      description: >
+        delete the logged in user and log him out and
+        remove all the refrnces for this user refrance from everything.
+      responses:
+        200:
+          description: Response of the succesful delete operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message of the successful operation.
+                    example: User Deleted
